@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Hannah Verdant — marketing partner for growing service businesses</title>
-<meta name="description" content="Helping growing service businesses simplify their marketing. Strategy and hands-on delivery from one marketing partner. Book a discovery call.">
+<meta name="description" content="Helping growing service businesses simplify their marketing. Strategy and hands-on delivery from one marketing partner, based near London and working worldwide.">
 <link rel="canonical" href="https://hannahverdant.co/">
 <meta property="og:title" content="Hannah Verdant — marketing partner for growing service businesses">
 <meta property="og:description" content="Strategy and hands-on delivery from one marketing partner. No agency layers, no strategy deck left in a drawer.">
@@ -180,15 +180,27 @@
   .words { background: var(--blue); }
   .words h2, .words .kicker { color: var(--ink); }
   .words .kicker::before { background: var(--wine); }
-  .carousel {
-    display: flex; gap: 20px; overflow-x: auto;
-    scroll-snap-type: x mandatory; padding-bottom: 8px;
-    scrollbar-width: none;
+  .words-flow { overflow: hidden; }
+  .words-track {
+    display: flex; width: max-content;
+    animation: wordsflow 70s linear infinite;
   }
-  .carousel::-webkit-scrollbar { display: none; }
+  .words-track:hover { animation-play-state: paused; }
+  @keyframes wordsflow {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
   .quote-card {
-    flex: 0 0 min(420px, 85%); scroll-snap-align: start;
-    background: var(--ivory); border-radius: 3px; padding: 36px 32px;
+    flex: 0 0 min(420px, 78vw); margin-right: 20px;
+    background: var(--ivory); border-radius: 3px; padding: 30px 32px 36px;
+  }
+  .quote-card::before {
+    content: "\201C";
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 58px; line-height: 0.9; height: 0.55em;
+    color: var(--moss);
+    margin-bottom: 14px;
   }
   .quote-card blockquote {
     font-family: 'Fraunces', serif; font-size: 20px; line-height: 1.5;
@@ -198,13 +210,6 @@
     font-style: normal; font-size: 12.5px; letter-spacing: 0.1em;
     text-transform: uppercase; opacity: 0.6;
   }
-  .carousel-nav { margin-top: 24px; display: flex; gap: 10px; }
-  .carousel-nav button {
-    width: 42px; height: 42px; border-radius: 50%;
-    border: 1px solid var(--ink); background: transparent; color: var(--ink);
-    font-size: 17px; cursor: pointer; transition: all 0.2s ease;
-  }
-  .carousel-nav button:hover { background: var(--ink); color: var(--ivory); }
   .words-closing {
     margin-top: 36px; font-family: 'Fraunces', serif; font-style: italic;
     font-size: 21px; color: var(--ink);
@@ -296,7 +301,7 @@
   .insta { padding: 72px 0; }
   .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
   @media (max-width: 700px) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
-  .insta-tile { aspect-ratio: 1; border-radius: 3px; display: flex; align-items: flex-end; padding: 14px; text-decoration: none; }
+  .insta-tile { aspect-ratio: 4 / 5; border-radius: 3px; display: flex; align-items: flex-end; padding: 14px; text-decoration: none; }
   .insta-tile.t-moss { background: var(--moss); }
   .insta-tile.t-blue { background: var(--blue); }
   .insta-tile.t-ivory { background: var(--ivory-deep); border: 1px solid var(--hairline); }
@@ -336,6 +341,8 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .marquee-track { animation: none; }
+    .words-track { animation: none; }
+    .words-flow { overflow-x: auto; }
   }
 </style>
 </head>
@@ -421,23 +428,21 @@
   <section class="words" aria-label="Client words">
     <div class="wrap">
       <p class="kicker reveal">Client words</p>
-      <div class="carousel reveal" id="quoteCarousel" tabindex="0" aria-label="Client feedback, scroll horizontally">
-        <figure class="quote-card">
-          <blockquote>&ldquo;Highly personable and committed to you and your business, not only the task at hand.&rdquo;</blockquote>
-          <cite>Client feedback, shared with permission</cite>
-        </figure>
-        <figure class="quote-card">
-          <blockquote>&ldquo;She took the initiative to create something based on what she knew about the business and its goals.&rdquo;</blockquote>
-          <cite>Client feedback, shared with permission</cite>
-        </figure>
-        <figure class="quote-card">
-          <blockquote>&ldquo;Exceptional initiative, persistence with follow-up, and highly organised.&rdquo;</blockquote>
-          <cite>Client feedback, shared with permission</cite>
-        </figure>
-      </div>
-      <div class="carousel-nav">
-        <button type="button" id="quotePrev" aria-label="Previous quote">&larr;</button>
-        <button type="button" id="quoteNext" aria-label="Next quote">&rarr;</button>
+      <div class="words-flow reveal" aria-label="Client feedback">
+        <div class="words-track" id="wordsTrack">
+          <figure class="quote-card">
+            <blockquote>Highly personable and committed to you and your business, not only the task at hand.</blockquote>
+            <cite>Client feedback, shared with permission</cite>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>She took the initiative to create something based on what she knew about the business and its goals.</blockquote>
+            <cite>Client feedback, shared with permission</cite>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>Exceptional initiative, persistence with follow-up, and highly organised.</blockquote>
+            <cite>Client feedback, shared with permission</cite>
+          </figure>
+        </div>
       </div>
       <p class="words-closing reveal">The bar I hold myself to: notice the thing nobody asked for.</p>
     </div>
@@ -516,6 +521,7 @@
           <p>I’m Hannah. My career has moved between government, corporate leadership and creative studios: years as an EA to government ministers and CEOs, and years in creative studios on projects big and small. Different worlds, but the same habit ran through both. I notice things. I’m a curious person by nature, and I tend to absorb far more of a room, a business, a decision than I’m actually asked to.</p>
           <p>That habit is the thread running through everything I do now. Still watching closely. Still curious about what’s actually going on underneath the surface of a business.</p>
           <p>Now I do one job: helping a small number of growing service businesses simplify their marketing and build the systems that support it. We decide what matters, together. I build it.</p>
+          <p>I&rsquo;m based just outside London and work with clients wherever they are.</p>
           <p>Off the clock: a film camera, wherever the next trip is, and Barney, my red golden retriever and the best colleague I could ever ask for.</p>
           <p>I use AI daily as a tool and never as a substitute for judgement. I work with a handful of clients properly rather than many at arm’s length. Both of those are on purpose.</p>
         </div>
@@ -632,7 +638,7 @@
       </div>
     </div>
     <div class="foot-line">
-      <span>&copy; <span id="year">2026</span> Hannah Verdant</span>
+      <span>&copy; <span id="year">2026</span> Hannah Verdant &middot; Near London, working worldwide</span>
       <span>calm, considered, curious</span>
     </div>
   </div>
@@ -663,14 +669,16 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Quote carousel
-  var carousel = document.getElementById("quoteCarousel");
-  function slide(dir) {
-    var card = carousel.querySelector(".quote-card");
-    carousel.scrollBy({ left: dir * (card.offsetWidth + 20), behavior: reduced ? "auto" : "smooth" });
+  // Client words: duplicate the cards so the slow loop is seamless.
+  // Skipped for reduced motion, where the row is simply scrollable.
+  var wordsTrack = document.getElementById("wordsTrack");
+  if (!reduced) {
+    wordsTrack.querySelectorAll(".quote-card").forEach(function (card) {
+      var copy = card.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      wordsTrack.appendChild(copy);
+    });
   }
-  document.getElementById("quotePrev").addEventListener("click", function () { slide(-1); });
-  document.getElementById("quoteNext").addEventListener("click", function () { slide(1); });
 
   // Booking: qualifying questions -> inline Calendly with answers prefilled.
   // Replace CALENDLY_URL with the real event link before launch. If the Calendly
