@@ -182,18 +182,14 @@
   .words { background: var(--blue); }
   .words h2, .words .kicker { color: var(--ink); }
   .words .kicker::before { background: var(--wine); }
-  .words-flow { overflow: hidden; }
-  .words-track {
-    display: flex; width: max-content;
-    animation: wordsflow 70s linear infinite;
+  .carousel {
+    display: flex; gap: 20px; overflow-x: auto;
+    scroll-snap-type: x mandatory; padding-bottom: 8px;
+    scrollbar-width: none;
   }
-  .words-track:hover { animation-play-state: paused; }
-  @keyframes wordsflow {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
+  .carousel::-webkit-scrollbar { display: none; }
   .quote-card {
-    flex: 0 0 min(420px, 78vw); margin-right: 20px;
+    flex: 0 0 min(420px, 82%); scroll-snap-align: start;
     background: var(--ivory); border-radius: 3px; padding: 30px 32px 36px;
   }
   .quote-card::before {
@@ -212,6 +208,13 @@
     font-style: normal; font-size: 12.5px; letter-spacing: 0.1em;
     text-transform: uppercase; opacity: 0.6;
   }
+  .carousel-nav { margin-top: 24px; display: flex; gap: 10px; }
+  .carousel-nav button {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1px solid var(--ink); background: transparent; color: var(--ink);
+    font-size: 17px; cursor: pointer; transition: all 0.2s ease;
+  }
+  .carousel-nav button:hover { background: var(--ink); color: var(--ivory); }
   .words-closing {
     margin-top: 36px; font-family: 'Fraunces', serif; font-style: italic;
     font-size: 21px; color: var(--ink);
@@ -314,7 +317,7 @@
   .insta { padding: 72px 0; }
   .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
   @media (max-width: 700px) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
-  .insta-tile { aspect-ratio: 4 / 5; border-radius: 3px; display: flex; align-items: flex-end; padding: 14px; text-decoration: none; }
+  .insta-tile { aspect-ratio: 1; border-radius: 3px; display: flex; align-items: flex-end; padding: 14px; text-decoration: none; }
   .insta-tile.t-moss { background: var(--moss); }
   .insta-tile.t-blue { background: var(--blue); }
   .insta-tile.t-ivory { background: var(--ivory-deep); border: 1px solid var(--hairline); }
@@ -356,8 +359,6 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .marquee-track { animation: none; }
-    .words-track { animation: none; }
-    .words-flow { overflow-x: auto; }
   }
 </style>
 </head>
@@ -439,21 +440,31 @@
   <section class="words" aria-label="Client words">
     <div class="wrap">
       <p class="kicker reveal">Client words</p>
-      <div class="words-flow reveal" aria-label="Client feedback">
-        <div class="words-track" id="wordsTrack">
-          <figure class="quote-card">
-            <blockquote>Highly personable and committed to you and your business, not only the task at hand.</blockquote>
-            <cite>Client feedback, shared with permission</cite>
-          </figure>
-          <figure class="quote-card">
-            <blockquote>She took the initiative to create something based on what she knew about the business and its goals.</blockquote>
-            <cite>Client feedback, shared with permission</cite>
-          </figure>
-          <figure class="quote-card">
-            <blockquote>Exceptional initiative, persistence with follow-up, and highly organised.</blockquote>
-            <cite>Client feedback, shared with permission</cite>
-          </figure>
-        </div>
+      <div class="carousel reveal" id="quoteCarousel" tabindex="0" aria-label="Client feedback, scroll horizontally">
+        <figure class="quote-card">
+          <blockquote>Hannah takes time to learn about and get a feel for your brand. She instantly understood, intuitively, what messages I wanted to convey. Incredibly approachable and warm, and I would recommend her highly.</blockquote>
+          <cite>Maria, founder of Herstorical Tours, London</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>The branding doesn&rsquo;t feel as though it&rsquo;s been influenced by an algorithm or a feed. It feels evergreen while still feeling current. There&rsquo;s a human touch to it that people will really appreciate.</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>She took the initiative to create something based on what she knew about the business and its goals.</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>Highly personable and committed to you and your business, not only the task at hand.</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>Exceptional initiative, persistence with follow-up, and highly organised.</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+      </div>
+      <div class="carousel-nav">
+        <button type="button" id="quotePrev" aria-label="Previous quote">&larr;</button>
+        <button type="button" id="quoteNext" aria-label="Next quote">&rarr;</button>
       </div>
       <p class="words-closing reveal">The bar I hold myself to: notice the thing nobody asked for.</p>
     </div>
@@ -683,16 +694,14 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Client words: duplicate the cards so the slow loop is seamless.
-  // Skipped for reduced motion, where the row is simply scrollable.
-  var wordsTrack = document.getElementById("wordsTrack");
-  if (!reduced) {
-    wordsTrack.querySelectorAll(".quote-card").forEach(function (card) {
-      var copy = card.cloneNode(true);
-      copy.setAttribute("aria-hidden", "true");
-      wordsTrack.appendChild(copy);
-    });
+  // Client words: arrow buttons scroll one card at a time.
+  var carousel = document.getElementById("quoteCarousel");
+  function slide(dir) {
+    var card = carousel.querySelector(".quote-card");
+    carousel.scrollBy({ left: dir * (card.offsetWidth + 20), behavior: reduced ? "auto" : "smooth" });
   }
+  document.getElementById("quotePrev").addEventListener("click", function () { slide(-1); });
+  document.getElementById("quoteNext").addEventListener("click", function () { slide(1); });
 
   // Booking: qualifying questions -> inline Calendly with answers prefilled.
   // Replace CALENDLY_URL with the real event link before launch. If the Calendly
