@@ -304,6 +304,13 @@
     font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ivory);
   }
   .insta-tile.t-blue span, .insta-tile.t-ivory span { color: var(--ink); }
+  .insta-tile { position: relative; overflow: hidden; }
+  .insta-tile img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; transition: transform 0.4s ease;
+  }
+  .insta-tile.has-photo:hover img { transform: scale(1.03); }
+  .insta-tile.has-photo span { display: none; }
   .insta-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
 
   /* ---------- footer ---------- */
@@ -596,15 +603,15 @@
     <div class="wrap">
       <div class="insta-head">
         <p class="kicker" style="margin-bottom:0;">From Instagram</p>
-        <a class="text-link" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer" style="font-size:14px;">@hannahverdant.co</a>
+        <a class="text-link" href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer" style="font-size:14px;">@hannah.verdant</a>
       </div>
-      <div class="insta-grid reveal">
+      <div class="insta-grid reveal" id="instaGrid">
         <!-- Placeholder tiles: replace with a live feed widget (e.g. Behold or LightWidget)
              before launch, or keep as brand tiles linking to the profile. -->
-        <a class="insta-tile t-moss" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>what I’ve noticed&hellip;</span></a>
-        <a class="insta-tile t-ivory" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>behind the business</span></a>
-        <a class="insta-tile t-blue" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>a considered life</span></a>
-        <a class="insta-tile t-moss" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>marketing philosophy</span></a>
+        <a class="insta-tile t-moss" href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer"><span>what I’ve noticed&hellip;</span></a>
+        <a class="insta-tile t-ivory" href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer"><span>behind the business</span></a>
+        <a class="insta-tile t-blue" href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer"><span>a considered life</span></a>
+        <a class="insta-tile t-moss" href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer"><span>marketing philosophy</span></a>
       </div>
     </div>
   </section>
@@ -619,7 +626,7 @@
         <span class="ital">verdant</span>
       </a>
       <div class="foot-links">
-        <a href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/hannah.verdant" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.linkedin.com/in/hannah-verdant-553a20406" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:hello@hannahverdant.co">hello@hannahverdant.co</a>
       </div>
@@ -717,6 +724,36 @@
     e.preventDefault();
     openCalendly(null);
   });
+
+  // Live Instagram feed. Connect the Instagram account at behold.so (free),
+  // then paste the feed URL it gives you between the quotes below. The four
+  // tiles become the latest posts; if the feed is empty or unreachable, the
+  // brand tiles above stay as they are.
+  var BEHOLD_FEED_URL = "";
+  if (BEHOLD_FEED_URL) {
+    fetch(BEHOLD_FEED_URL)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var posts = (data.posts || []).slice(0, 4);
+        var tiles = document.querySelectorAll("#instaGrid .insta-tile");
+        posts.forEach(function (post, i) {
+          var tile = tiles[i];
+          if (!tile) return;
+          var src = post.mediaType === "VIDEO"
+            ? (post.thumbnailUrl || "")
+            : ((post.sizes && post.sizes.medium && post.sizes.medium.mediaUrl) || post.mediaUrl || "");
+          if (!src) return;
+          var img = document.createElement("img");
+          img.src = src;
+          img.alt = ((post.prunedCaption || post.caption || "Instagram post") + "").slice(0, 120);
+          img.loading = "lazy";
+          if (post.permalink) tile.href = post.permalink;
+          tile.classList.add("has-photo");
+          tile.appendChild(img);
+        });
+      })
+      .catch(function () { /* keep brand tiles */ });
+  }
 })();
 </script>
 
