@@ -127,6 +127,7 @@
   .photo.portrait { aspect-ratio: 4 / 5; }
   .photo.wide { aspect-ratio: 16 / 7; }
   .photo.square { aspect-ratio: 1; }
+  img.photo { object-fit: cover; width: 100%; display: block; }
 
   /* ---------- marquee ---------- */
   .marquee {
@@ -378,9 +379,7 @@
           <a class="text-link" href="#how">See how it works</a>
         </div>
       </div>
-      <div class="photo portrait reveal">
-        <span>Fuji photography<br>hero portrait</span>
-      </div>
+      <img class="photo portrait reveal" src="images/hannah-hero.jpg" alt="Hannah at a table with her laptop, in a sitting room with a floral blind">
     </div>
   </section>
 
@@ -513,7 +512,7 @@
       <p class="kicker reveal">About Hannah</p>
       <div class="about-grid">
         <div class="about-photos reveal">
-          <div class="photo portrait"><span>Fuji photography<br>warm portrait</span></div>
+          <img class="photo portrait" src="images/hannah-portrait.jpg" alt="Hannah outdoors in the sun, smiling">
           <div class="photo square blue"><span>film camera, dog,<br>travel</span></div>
         </div>
         <div class="prose reveal">

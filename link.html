@@ -99,6 +99,7 @@
   }
   .photo.wide { aspect-ratio: 4/3; background: repeating-linear-gradient(135deg, var(--blue), var(--blue) 10px, #93a7a2 10px, #93a7a2 20px); }
   .photo.wide span { color: var(--ink); border-color: rgba(36,28,26,0.35); }
+  img.photo { object-fit: cover; width: 100%; display: block; }
 
   /* Intro */
   .intro p { font-size: 14.5px; line-height: 1.75; }
@@ -196,9 +197,7 @@
     <p class="tagline">Marketing partner for founder-led service businesses.</p>
   </div>
 
-  <div class="photo" role="img" aria-label="Portrait photograph placeholder">
-    <span>Fuji photography<br>hero portrait</span>
-  </div>
+  <img class="photo" src="images/hannah-hero.jpg" alt="Hannah at a table with her laptop, in a sitting room with a floral blind">
 
   <div class="block intro">
     <p>Hi, I’m Hannah. This is a bit of a reintroduction.</p>
