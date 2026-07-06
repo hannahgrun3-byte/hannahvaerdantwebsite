@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Where Your Marketing Leaks — Hannah Verdant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F2EEE1;
+    --moss: #5C5A2E;
+    --blue: #A8BDB8;
+    --wine: #591826;
+    --ink: #241C1A;
+    --hairline: rgba(36,28,26,0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: A4; margin: 0; }
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    background: var(--ivory);
+    page-break-after: always;
+    position: relative;
+    padding: 24mm 22mm 20mm;
+    overflow: hidden;
+  }
+  .sheet:last-child { page-break-after: auto; }
+
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; }
+
+  /* running footer */
+  .runner {
+    position: absolute;
+    left: 22mm; right: 22mm; bottom: 12mm;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.45;
+  }
+  .runner .pg { font-family: 'Fraunces', serif; letter-spacing: 0.1em; }
+
+  .logotype { text-align: center; line-height: 1; }
+  .logotype .caps {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 15pt; letter-spacing: 0.24em; display: block;
+  }
+  .logotype .ital {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: 17pt; color: var(--moss); display: block; margin-top: 1mm;
+  }
+
+  /* ---------- cover ---------- */
+  .cover {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: space-between;
+    text-align: center; padding-top: 60mm; padding-bottom: 26mm;
+  }
+  .cover .dot { width: 4mm; height: 4mm; border-radius: 50%; background: var(--wine); }
+  .cover h1 {
+    margin-top: 16mm;
+    font-weight: 600;
+    font-size: 34pt;
+    letter-spacing: 0.14em;
+    line-height: 1.35;
+  }
+  .cover .sub {
+    margin-top: 12mm;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 14pt; color: var(--moss);
+    max-width: 110mm; line-height: 1.6;
+  }
+
+  /* ---------- intro ---------- */
+  .intro h2 { font-size: 24pt; line-height: 1.3; max-width: 140mm; }
+  .intro h2 em { font-style: italic; font-weight: 400; color: var(--moss); }
+  .intro .body { margin-top: 12mm; max-width: 128mm; font-size: 11pt; line-height: 1.85; }
+  .intro .body p + p { margin-top: 5mm; }
+  .scorekey { margin-top: 14mm; border-top: 1px solid var(--hairline); padding-top: 9mm; max-width: 128mm; }
+  .scorekey .lab {
+    font-size: 8.5pt; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--moss); margin-bottom: 6mm;
+  }
+  .keyrow { display: flex; align-items: center; gap: 6mm; padding: 3.5mm 0; }
+  .keyrow + .keyrow { border-top: 1px solid var(--hairline); }
+  .keyrow .num {
+    width: 9mm; height: 9mm; border: 1px solid var(--ink); border-radius: 1mm;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 12pt; flex: none;
+  }
+  .keyrow .desc { font-size: 10.5pt; }
+
+  /* ---------- section pages ---------- */
+  .sechead { display: flex; align-items: baseline; gap: 7mm; }
+  .sechead .n {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 30pt; color: var(--blue);
+  }
+  .sechead .n.alt { color: var(--moss); opacity: 0.55; }
+  .sechead h2 { font-size: 26pt; }
+  .sec-rule { height: 1.2mm; width: 26mm; margin-top: 7mm; background: var(--moss); }
+  .sec-rule.alt { background: var(--blue); }
+  .sec-lede {
+    margin-top: 8mm; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 12pt; color: var(--moss); max-width: 130mm; line-height: 1.6;
+  }
+  .questions { margin-top: 13mm; }
+  .q { display: flex; justify-content: space-between; align-items: flex-start; gap: 10mm; padding: 8mm 0; }
+  .q + .q { border-top: 1px solid var(--hairline); }
+  .q .txt { font-size: 11.5pt; line-height: 1.7; max-width: 108mm; }
+  .scoreboxes { display: flex; gap: 2.5mm; flex: none; padding-top: 1mm; }
+  .scoreboxes .b {
+    width: 8.5mm; height: 8.5mm; border: 1px solid var(--ink); border-radius: 1mm;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 10.5pt; color: var(--ink);
+  }
+  .sectotal {
+    margin-top: 12mm; display: flex; justify-content: flex-end; align-items: baseline; gap: 4mm;
+    font-size: 10pt; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .sectotal .line {
+    display: inline-block; width: 16mm; border-bottom: 1px solid var(--ink); height: 5mm;
+  }
+
+  /* ---------- scoring page ---------- */
+  .scoring h2 { font-size: 24pt; }
+  .total-line {
+    margin-top: 10mm; display: flex; align-items: baseline; gap: 5mm;
+    font-family: 'Fraunces', serif; font-size: 15pt;
+  }
+  .total-line .line { display: inline-block; width: 22mm; border-bottom: 1px solid var(--ink); height: 7mm; }
+  .band { margin-top: 7mm; padding: 7mm 9mm; border: 1px solid var(--hairline); border-radius: 1mm; }
+  .band .range {
+    font-family: 'Fraunces', serif; font-size: 14pt; color: var(--moss); margin-bottom: 3mm;
+  }
+  .band.mid .range { color: var(--ink); }
+  .band p { font-size: 10.5pt; line-height: 1.75; }
+  .circle-note {
+    margin-top: 8mm; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 12.5pt; color: var(--moss); max-width: 150mm; line-height: 1.65;
+  }
+
+  /* ---------- closing ---------- */
+  .closing {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: space-between; text-align: center;
+    padding-top: 70mm; padding-bottom: 26mm;
+  }
+  .closing p.main {
+    font-family: 'Fraunces', serif; font-size: 17pt; line-height: 1.65;
+    max-width: 130mm;
+  }
+  .closing p.detail {
+    margin-top: 9mm; font-size: 11pt; line-height: 1.8; color: var(--ink); max-width: 110mm;
+  }
+  .closing .cta {
+    display: inline-block; margin-top: 14mm;
+    background: var(--wine); color: var(--ivory);
+    font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 11.5pt;
+    letter-spacing: 0.04em; text-decoration: none;
+    padding: 6mm 14mm; border-radius: 1mm;
+  }
+  .closing .url { margin-top: 5mm; font-size: 9pt; letter-spacing: 0.08em; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<div class="sheet cover">
+  <div>
+    <div class="dot" style="margin: 0 auto;"></div>
+    <h1>WHERE YOUR<br>MARKETING<br>LEAKS</h1>
+    <p class="sub">A 20-minute self-audit for founder-led service businesses.</p>
+  </div>
+  <div class="logotype">
+    <span class="caps">HANNAH</span>
+    <span class="ital">verdant</span>
+  </div>
+</div>
+
+<!-- 2 · Intro -->
+<div class="sheet intro">
+  <h2>Most growing businesses don’t have a marketing problem. <em>They have a clarity problem.</em></h2>
+  <div class="body">
+    <p>Marketing usually grows up alongside a business rather than being designed on purpose. The pieces exist, they’re just not joined up.</p>
+    <p>This audit takes about 20 minutes. Seven areas, three questions each. Score every question 0 to 2, honestly. Nobody sees this but you.</p>
+  </div>
+  <div class="scorekey">
+    <p class="lab">How to score</p>
+    <div class="keyrow"><span class="num">0</span><span class="desc">rarely / no</span></div>
+    <div class="keyrow"><span class="num">1</span><span class="desc">sometimes / partially</span></div>
+    <div class="keyrow"><span class="num">2</span><span class="desc">yes / consistently</span></div>
+  </div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">02</span></div>
+</div>
+
+<!-- 3 · Message -->
+<div class="sheet">
+  <div class="sechead"><span class="n">01</span><h2>Message</h2></div>
+  <div class="sec-rule"></div>
+  <p class="sec-lede">If the words change every time, nothing built on them can hold.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">If you asked three people on your team what you do and who it’s for, would you get three different answers?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Do you have one sentence you’d say confidently to a stranger, or does it change depending on who’s asking?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Does your website say the same thing your team says out loud?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">03</span></div>
+</div>
+
+<!-- 4 · Website -->
+<div class="sheet">
+  <div class="sechead"><span class="n alt">02</span><h2>Website</h2></div>
+  <div class="sec-rule alt"></div>
+  <p class="sec-lede">Five seconds is roughly how long a stranger gives you.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">Could a stranger tell what you do within five seconds of landing on your homepage?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Is there one obvious next step, or several competing calls to action?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Has anyone outside the business reviewed it in the last 12 months?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">04</span></div>
+</div>
+
+<!-- 5 · Email -->
+<div class="sheet">
+  <div class="sechead"><span class="n">03</span><h2>Email</h2></div>
+  <div class="sec-rule"></div>
+  <p class="sec-lede">The quietest channel is usually the one already paid for.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">Do you have a list of past enquiries and customers in one place?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Has that list heard from you in the last 90 days?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">If someone replied to your last email, would you know?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">05</span></div>
+</div>
+
+<!-- 6 · Content -->
+<div class="sheet">
+  <div class="sechead"><span class="n alt">04</span><h2>Content</h2></div>
+  <div class="sec-rule alt"></div>
+  <p class="sec-lede">Consistency is a structure question, not a discipline question.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">Could you predict what you’ll post next week without thinking hard right now?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Is there a repeatable format you reuse, or does every post start from a blank page?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Has content gone quiet for more than a month in the last year?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">06</span></div>
+</div>
+
+<!-- 7 · Pipeline visibility -->
+<div class="sheet">
+  <div class="sechead"><span class="n">05</span><h2>Pipeline visibility</h2></div>
+  <div class="sec-rule"></div>
+  <p class="sec-lede">You can’t protect a source you can’t name.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">Could you list where your last ten clients actually came from?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Do you track this anywhere, or is it a guess based on memory?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">If your best referral source dried up tomorrow, would you notice within a month?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">07</span></div>
+</div>
+
+<!-- 8 · Systems and handoffs -->
+<div class="sheet">
+  <div class="sechead"><span class="n alt">06</span><h2>Systems and handoffs</h2></div>
+  <div class="sec-rule alt"></div>
+  <p class="sec-lede">Enquiries rarely announce themselves twice.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">When an enquiry comes in, is there a defined next step, or does it depend on who sees it first?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Could someone else in the business handle a new enquiry the same way you would?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Do enquiries ever get missed or answered late because nobody owned the follow-up?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">08</span></div>
+</div>
+
+<!-- 9 · AI -->
+<div class="sheet">
+  <div class="sechead"><span class="n">07</span><h2>AI</h2></div>
+  <div class="sec-rule"></div>
+  <p class="sec-lede">AI multiplies structure. It can’t replace it.</p>
+  <div class="questions">
+    <div class="q">
+      <p class="txt">Is AI doing repeatable work in your marketing today, or did a few experiments never quite stick?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Does anything AI writes get a human pass before a customer sees it?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+    <div class="q">
+      <p class="txt">Could you name the tasks AI saves you time on each week?</p>
+      <div class="scoreboxes"><span class="b">0</span><span class="b">1</span><span class="b">2</span></div>
+    </div>
+  </div>
+  <div class="sectotal"><span>Section total</span><span class="line"></span><span>/ 6</span></div>
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">09</span></div>
+</div>
+
+<!-- 10 · Scoring -->
+<div class="sheet scoring">
+  <h2>Your score</h2>
+  <p class="circle-note">Before you add anything up, circle your lowest-scoring section. That’s usually the one quietly dragging on all the others, and the one worth talking about first.</p>
+  <div class="total-line"><span>Now add up your seven section totals:</span><span class="line"></span><span>/ 42</span></div>
+
+  <div class="band">
+    <p class="range">0–14</p>
+    <p>This is a completely normal place to be. Marketing usually grows up alongside a business rather than being designed on purpose. The fix isn’t more activity, it’s deciding what to keep, what to drop, and what order to rebuild it in.</p>
+  </div>
+  <div class="band mid">
+    <p class="range">15–28</p>
+    <p>You’ve got real foundations. The gaps are specific rather than everywhere, which is the easier problem to have. Usually one or two of the seven areas above are quietly dragging on all the others.</p>
+  </div>
+  <div class="band">
+    <p class="range">29–42</p>
+    <p>You’re closer than most businesses your size. What’s likely missing isn’t structure, it’s refinement.</p>
+  </div>
+
+  <div class="runner"><span>Where your marketing leaks</span><span class="pg">10</span></div>
+</div>
+
+<!-- 11 · Closing -->
+<div class="sheet closing">
+  <div>
+    <p class="main">If you’d like a second pair of eyes on your score, that’s exactly what a discovery call is&nbsp;for.</p>
+    <p class="detail">45 minutes, mostly me asking questions, no pressure either way.</p>
+    <a class="cta" href="https://hannahverdant.co/#book">Book a discovery call</a>
+    <p class="url">hannahverdant.co</p>
+  </div>
+  <div class="logotype">
+    <span class="caps">HANNAH</span>
+    <span class="ital">verdant</span>
+  </div>
+</div>
+
+</body>
+</html>

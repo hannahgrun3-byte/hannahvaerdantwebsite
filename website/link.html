@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Verdant — book a discovery call</title>
+<meta name="description" content="Marketing partner for founder-led service businesses. Book a 45-minute discovery call.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#F2EEE1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F2EEE1'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23591826'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F2EEE1;
+    --moss: #5C5A2E;
+    --blue: #A8BDB8;
+    --wine: #591826;
+    --ink: #241C1A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #E4E0D3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    padding: 32px 12px;
+  }
+  @media (max-width: 440px) { body { padding: 0; background: var(--ivory); } }
+  .page {
+    width: 100%;
+    max-width: 400px;
+    background: var(--ivory);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(36,28,26,0.15);
+  }
+  @media (max-width: 440px) { .page { box-shadow: none; border-radius: 0; } }
+  .block { padding: 36px 28px; }
+  .block + .block { border-top: 1px solid rgba(36,28,26,0.08); }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+
+  /* Header */
+  .header { text-align: center; padding-top: 48px; padding-bottom: 30px; }
+  .logo-caps {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+  }
+  .logo-italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--moss);
+    margin-top: -2px;
+  }
+  .tagline {
+    margin-top: 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Photo placeholder */
+  .photo {
+    aspect-ratio: 4 / 5;
+    background: repeating-linear-gradient(
+      135deg,
+      var(--moss),
+      var(--moss) 10px,
+      #545230 10px,
+      #545230 20px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .photo span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    opacity: 0.85;
+    padding: 10px 16px;
+    border: 1px solid rgba(242,238,225,0.5);
+  }
+  .photo.wide { aspect-ratio: 4/3; background: repeating-linear-gradient(135deg, var(--blue), var(--blue) 10px, #93a7a2 10px, #93a7a2 20px); }
+  .photo.wide span { color: var(--ink); border-color: rgba(36,28,26,0.35); }
+
+  /* Intro */
+  .intro p { font-size: 14.5px; line-height: 1.75; }
+  .intro p + p { margin-top: 14px; }
+
+  /* Primary CTA */
+  .cta-block { text-align: center; padding: 32px 28px 8px; }
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--wine);
+    color: var(--ivory);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    padding: 17px 20px;
+    border-radius: 3px;
+    transition: background 0.25s ease;
+  }
+  .cta-btn:hover { background: #6d2231; }
+  .cta-sub {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+
+  /* Secondary links */
+  .links { padding-top: 8px; }
+  .link-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid rgba(36,28,26,0.1);
+    font-size: 13.5px;
+    font-weight: 500;
+    min-height: 48px;
+  }
+  .link-row:last-child { border-bottom: none; }
+  .link-row .arrow { opacity: 0.4; font-family: 'Work Sans', sans-serif; }
+  .link-row:hover .arrow { opacity: 0.8; }
+  .link-tag {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wine);
+    border: 1px solid rgba(89,24,38,0.35);
+    border-radius: 2px;
+    padding: 2px 6px;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+
+  /* Signature mark */
+  .signature {
+    text-align: center;
+    padding: 28px 28px 40px;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    background: var(--wine);
+    border-radius: 50%;
+    margin: 0 auto 14px;
+  }
+  .signature p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--moss);
+  }
+  .footer {
+    text-align: center;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.4;
+    padding: 20px 28px 32px;
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <div class="block header">
+    <div class="logo-caps">HANNAH</div>
+    <div class="logo-italic">verdant</div>
+    <p class="tagline">Marketing partner for founder-led service businesses.</p>
+  </div>
+
+  <div class="photo" role="img" aria-label="Portrait photograph placeholder">
+    <span>Fuji photography<br>hero portrait</span>
+  </div>
+
+  <div class="block intro">
+    <p>Hi, I’m Hannah. This is a bit of a reintroduction.</p>
+    <p>I help founder-led service businesses simplify their marketing and build the systems that support it. We decide what matters, then I build it.</p>
+  </div>
+
+  <div class="cta-block">
+    <a href="https://calendly.com/hello-hannahverdant-call/discovery-call" class="cta-btn" rel="noopener noreferrer">Book a discovery call</a>
+    <p class="cta-sub">45 minutes. Mostly me asking questions. No pressure either way.</p>
+  </div>
+
+  <div class="block links">
+    <a href="https://hannahverdant.co/lead-magnet/where-your-marketing-leaks.pdf" class="link-row">
+      <span>Where your marketing leaks<span class="link-tag">free audit</span></span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a href="https://hannahverdant.co" class="link-row">
+      <span>The full website</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a href="https://www.linkedin.com/in/hannah-verdant-553a20406" class="link-row" rel="noopener noreferrer">
+      <span>LinkedIn</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+
+  <div class="photo wide" role="img" aria-label="Photograph placeholder">
+    <span>Fuji photography<br>considered life</span>
+  </div>
+
+  <div class="signature">
+    <div class="dot"></div>
+    <p>calm, considered, curious</p>
+  </div>
+
+  <div class="footer">Hannah Verdant</div>
+
+</main>
+
+</body>
+</html>

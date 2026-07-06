@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Hannah Verdant — marketing partner for growing service businesses</title>
+<meta name="description" content="Helping growing service businesses simplify their marketing. Strategy and hands-on delivery from one marketing partner. Book a discovery call.">
+<link rel="canonical" href="https://hannahverdant.co/">
+<meta property="og:title" content="Hannah Verdant — marketing partner for growing service businesses">
+<meta property="og:description" content="Strategy and hands-on delivery from one marketing partner. No agency layers, no strategy deck left in a drawer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hannahverdant.co/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F2EEE1'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23591826'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F2EEE1;
+    --ivory-deep: #EAE5D4;
+    --moss: #5C5A2E;
+    --moss-deep: #4E4C26;
+    --blue: #A8BDB8;
+    --wine: #591826;
+    --ink: #241C1A;
+    --hairline: rgba(36,28,26,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16.5px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.15; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 640px; }
+  section { padding: 96px 0; scroll-margin-top: 72px; }
+  @media (max-width: 700px) { section { padding: 64px 0; } body { font-size: 15.5px; } }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--wine); color: var(--ivory); padding: 12px 20px; z-index: 100;
+  }
+  .skip:focus { left: 0; }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(242,238,225,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; max-width: 1060px; margin: 0 auto;
+  }
+  .logotype { text-decoration: none; line-height: 1; }
+  .logotype .caps {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 15px; letter-spacing: 0.22em; display: block;
+  }
+  .logotype .ital {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: 16px; color: var(--moss); display: block; margin-top: 1px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a:not(.btn) {
+    text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.85;
+  }
+  .nav-links a:not(.btn):hover { opacity: 1; }
+  @media (max-width: 700px) { .nav-links a:not(.btn) { display: none; } }
+
+  .btn {
+    display: inline-block;
+    background: var(--wine); color: var(--ivory);
+    font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 15px;
+    letter-spacing: 0.02em; text-decoration: none;
+    padding: 14px 28px; border-radius: 3px; border: none; cursor: pointer;
+    transition: background 0.25s ease;
+  }
+  .btn:hover { background: #6d2231; }
+  .btn.small { padding: 10px 18px; font-size: 13.5px; }
+  .btn:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible,
+  input:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--wine); outline-offset: 3px;
+  }
+  .text-link {
+    font-weight: 500; text-decoration: underline;
+    text-decoration-thickness: 1px; text-underline-offset: 4px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 110px 0 90px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center;
+  }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 {
+    font-size: clamp(38px, 5.2vw, 58px);
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--moss); }
+  .hero p.lede { margin-top: 26px; font-size: 18px; max-width: 480px; }
+  @media (max-width: 700px) { .hero p.lede { font-size: 16px; } }
+  .hero-cta { margin-top: 36px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  /* ---------- photo placeholders ---------- */
+  .photo {
+    background: repeating-linear-gradient(135deg, var(--moss), var(--moss) 10px, #545230 10px, #545230 20px);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    border-radius: 3px;
+  }
+  .photo span {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ivory); opacity: 0.85; padding: 10px 16px;
+    border: 1px solid rgba(242,238,225,0.5);
+  }
+  .photo.blue { background: repeating-linear-gradient(135deg, var(--blue), var(--blue) 10px, #93a7a2 10px, #93a7a2 20px); }
+  .photo.blue span { color: var(--ink); border-color: rgba(36,28,26,0.35); }
+  .photo.portrait { aspect-ratio: 4 / 5; }
+  .photo.wide { aspect-ratio: 16 / 7; }
+  .photo.square { aspect-ratio: 1; }
+
+  /* ---------- marquee ---------- */
+  .marquee {
+    background: var(--moss); color: var(--ivory);
+    overflow: hidden; padding: 18px 0; white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: marquee 42s linear infinite;
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee span {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 17px;
+    padding: 0 14px;
+  }
+  .marquee .dotsep { font-style: normal; opacity: 0.55; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---------- section headings ---------- */
+  .kicker {
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--moss); margin-bottom: 18px;
+  }
+  .kicker::before {
+    content: ""; display: inline-block; width: 7px; height: 7px;
+    border-radius: 50%; background: var(--wine); margin-right: 10px;
+    vertical-align: 1px;
+  }
+  h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 28px; }
+  .prose p + p { margin-top: 18px; }
+  .prose { max-width: 640px; }
+
+  /* ---------- problem ---------- */
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .problem-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .pull {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 24px;
+    line-height: 1.45; color: var(--moss);
+    border-top: 1px solid var(--hairline); padding-top: 28px; margin-top: 8px;
+  }
+
+  /* ---------- how i help ---------- */
+  .how { border-top: 1px solid var(--hairline); }
+  .how-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .how-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ---------- client words ---------- */
+  .words { background: var(--blue); }
+  .words h2, .words .kicker { color: var(--ink); }
+  .words .kicker::before { background: var(--wine); }
+  .carousel {
+    display: flex; gap: 20px; overflow-x: auto;
+    scroll-snap-type: x mandatory; padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar { display: none; }
+  .quote-card {
+    flex: 0 0 min(420px, 85%); scroll-snap-align: start;
+    background: var(--ivory); border-radius: 3px; padding: 36px 32px;
+  }
+  .quote-card blockquote {
+    font-family: 'Fraunces', serif; font-size: 20px; line-height: 1.5;
+  }
+  .quote-card cite {
+    display: block; margin-top: 18px; font-family: 'Work Sans', sans-serif;
+    font-style: normal; font-size: 12.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; opacity: 0.6;
+  }
+  .carousel-nav { margin-top: 24px; display: flex; gap: 10px; }
+  .carousel-nav button {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1px solid var(--ink); background: transparent; color: var(--ink);
+    font-size: 17px; cursor: pointer; transition: all 0.2s ease;
+  }
+  .carousel-nav button:hover { background: var(--ink); color: var(--ivory); }
+  .words-closing {
+    margin-top: 36px; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 21px; color: var(--ink);
+  }
+
+  /* ---------- ways ---------- */
+  .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 12px; }
+  @media (max-width: 860px) { .ways-grid { grid-template-columns: 1fr; } }
+  .way {
+    border: 1px solid var(--hairline); border-radius: 3px;
+    padding: 36px 30px; background: rgba(255,255,255,0.25);
+    display: flex; flex-direction: column;
+  }
+  .way h3 { font-size: 23px; }
+  .way .price {
+    margin-top: 10px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--wine);
+  }
+  .way p { margin-top: 16px; font-size: 15px; flex: 1; }
+  .ways-note { margin-top: 40px; max-width: 640px; }
+
+  /* ---------- investment ---------- */
+  .investment { background: var(--moss); color: var(--ivory); }
+  .investment .kicker { color: var(--ivory); opacity: 0.8; }
+  .investment .kicker::before { background: var(--blue); }
+  .investment h2 { color: var(--ivory); }
+  .investment .figures {
+    font-family: 'Fraunces', serif; font-size: clamp(26px, 3.4vw, 36px);
+    line-height: 1.35; max-width: 720px;
+  }
+  .investment p.note { margin-top: 26px; max-width: 560px; opacity: 0.92; }
+
+  /* ---------- case studies ---------- */
+  .cases .prose { max-width: 640px; }
+
+  /* ---------- about ---------- */
+  .about { border-top: 1px solid var(--hairline); }
+  .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .about-photos { display: grid; gap: 16px; }
+  .about-photos .photo.square { max-width: 62%; justify-self: end; margin-top: -40px; margin-right: -20px; }
+  @media (max-width: 860px) { .about-photos .photo.square { margin: -40px 0 0; } }
+
+  /* ---------- audit ---------- */
+  .audit { background: var(--ivory-deep); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .audit-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+  @media (max-width: 860px) { .audit-grid { grid-template-columns: 1fr; } }
+  .audit-card {
+    background: var(--ivory); border: 1px solid var(--hairline); border-radius: 3px;
+    padding: 44px 40px; text-align: center;
+  }
+  .audit-card .doc-title {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 21px;
+    letter-spacing: 0.12em; line-height: 1.4;
+  }
+  .audit-card .doc-sub {
+    margin-top: 12px; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 15px; color: var(--moss);
+  }
+  .audit-card .dot { width: 8px; height: 8px; background: var(--wine); border-radius: 50%; margin: 22px auto 0; }
+
+  /* ---------- booking ---------- */
+  .book .lede { font-size: 18px; max-width: 620px; }
+  .book-panel {
+    margin-top: 48px; border: 1px solid var(--hairline); border-radius: 3px;
+    background: rgba(255,255,255,0.35); padding: 44px 40px; max-width: 720px;
+  }
+  @media (max-width: 700px) { .book-panel { padding: 30px 22px; } }
+  .book-panel .step-label {
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--moss); margin-bottom: 24px;
+  }
+  .field { margin-bottom: 22px; }
+  .field label { display: block; font-weight: 500; font-size: 15px; margin-bottom: 8px; }
+  .field select, .field input, .field textarea {
+    width: 100%; font-family: 'Work Sans', sans-serif; font-size: 15px;
+    color: var(--ink); background: var(--ivory);
+    border: 1px solid rgba(36,28,26,0.25); border-radius: 3px; padding: 12px 14px;
+  }
+  .field textarea { min-height: 84px; resize: vertical; }
+  .book-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 30px; }
+  .book-skip { font-size: 14px; opacity: 0.75; }
+  #calendly-embed { min-height: 0; transition: min-height 0.3s ease; }
+  #calendly-embed.open { min-height: 760px; margin-top: 36px; }
+  #calendly-embed iframe { width: 100%; height: 740px; border: 0; }
+  .calendly-fallback { margin-top: 20px; font-size: 14.5px; }
+
+  /* ---------- instagram ---------- */
+  .insta { padding: 72px 0; }
+  .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
+  @media (max-width: 700px) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
+  .insta-tile { aspect-ratio: 1; border-radius: 3px; display: flex; align-items: flex-end; padding: 14px; text-decoration: none; }
+  .insta-tile.t-moss { background: var(--moss); }
+  .insta-tile.t-blue { background: var(--blue); }
+  .insta-tile.t-ivory { background: var(--ivory-deep); border: 1px solid var(--hairline); }
+  .insta-tile span {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ivory);
+  }
+  .insta-tile.t-blue span, .insta-tile.t-ivory span { color: var(--ink); }
+  .insta-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: var(--ink); color: var(--ivory); padding: 56px 0 40px;
+  }
+  .foot-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+  footer .logotype .caps { color: var(--ivory); }
+  footer .logotype .ital { color: var(--blue); }
+  .foot-links { display: flex; gap: 26px; font-size: 14px; }
+  .foot-links a { text-decoration: none; opacity: 0.85; }
+  .foot-links a:hover { opacity: 1; text-decoration: underline; }
+  .foot-line {
+    margin-top: 44px; padding-top: 22px; border-top: 1px solid rgba(242,238,225,0.15);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    font-size: 12px; letter-spacing: 0.06em; opacity: 0.55;
+  }
+
+  /* ---------- reveals ---------- */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .marquee-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="logotype" href="#top" aria-label="Hannah Verdant — home">
+      <span class="caps">HANNAH</span>
+      <span class="ital">verdant</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How I help</a>
+      <a href="#ways">Ways to work together</a>
+      <a href="#about">About</a>
+      <a class="btn small" href="#book">Book a call</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Helping growing service businesses <em>simplify</em> their marketing.</h1>
+        <p class="lede">Strategy and hands-on delivery from one marketing partner. No agency layers, no strategy deck left in a drawer. Marketing that finally joins up.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#book">Book a discovery call</a>
+          <a class="text-link" href="#how">See how it works</a>
+        </div>
+      </div>
+      <div class="photo portrait reveal">
+        <span>Fuji photography<br>hero portrait</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>We decide what matters. Then I build it.</span><span class="dotsep">·</span>
+      <span>Calm, considered marketing.</span><span class="dotsep">·</span>
+      <span>Strategy and delivery, one person.</span><span class="dotsep">·</span>
+    </div>
+  </div>
+
+  <!-- The problem -->
+  <section id="problem">
+    <div class="wrap">
+      <p class="kicker reveal">The problem</p>
+      <div class="problem-grid">
+        <h2 class="reveal">You’ve built a business that works. The marketing grew up alongside it.</h2>
+        <div class="prose reveal">
+          <p>There’s a website, some email, a LinkedIn page, maybe a folder of half-finished plans. Each piece made sense when it was added. Nothing was ever designed to work together, and marketing has become the thing you think about at 9pm and move to next week.</p>
+          <p class="pull">Most growing businesses I meet don’t have a marketing problem. They have a clarity problem. The pieces exist. The structure doesn’t.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I help -->
+  <section class="how" id="how">
+    <div class="wrap">
+      <p class="kicker reveal">How I help</p>
+      <div class="how-grid">
+        <div class="photo wide blue reveal" style="aspect-ratio: 4/5;">
+          <span>Fuji photography<br>desk, notebook, detail</span>
+        </div>
+        <div class="prose reveal">
+          <h2>Part strategist, part builder. Inside your business rather than alongside it.</h2>
+          <p>I work as a marketing partner. That means working out what actually matters (usually two or three things, rarely ten), putting them in order, and then doing the work. We decide what matters, then I build it. Strategy and implementation aren’t separate phases with a handover in between. They’re the same job, done by the same person, who is still here next month.</p>
+          <p>Before this, my career split across government, corporate leadership and creative studios, including years as an EA to government ministers and CEOs, and years working in creative studios on projects big and small. The government and CEO years taught me structure: how good leadership actually runs a business from the inside, and what quietly moves things forward versus what just looks like progress. The creative studios taught me the other half: what makes an audience actually connect with something, and why some projects land and others don’t.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client words -->
+  <section class="words" aria-label="Client words">
+    <div class="wrap">
+      <p class="kicker reveal">Client words</p>
+      <div class="carousel reveal" id="quoteCarousel" tabindex="0" aria-label="Client feedback, scroll horizontally">
+        <figure class="quote-card">
+          <blockquote>&ldquo;Highly personable and committed to you and your business, not only the task at hand.&rdquo;</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>&ldquo;She took the initiative to create something based on what she knew about the business and its goals.&rdquo;</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>&ldquo;Exceptional initiative, persistence with follow-up, and highly organised.&rdquo;</blockquote>
+          <cite>Client feedback, shared with permission</cite>
+        </figure>
+      </div>
+      <div class="carousel-nav">
+        <button type="button" id="quotePrev" aria-label="Previous quote">&larr;</button>
+        <button type="button" id="quoteNext" aria-label="Next quote">&rarr;</button>
+      </div>
+      <p class="words-closing reveal">The bar I hold myself to: notice the thing nobody asked for.</p>
+    </div>
+  </section>
+
+  <!-- Ways to work together -->
+  <section id="ways">
+    <div class="wrap">
+      <p class="kicker reveal">Ways to work together</p>
+      <h2 class="reveal">Three ways in. All of them hands-on.</h2>
+      <div class="ways-grid">
+        <div class="way reveal">
+          <h3>Marketing Partnership</h3>
+          <p class="price">From £1,200 a month</p>
+          <p>A defined amount of strategic and implementation capacity each month, focused on the highest-impact priorities we agree together, with a planning call to set them.</p>
+        </div>
+        <div class="way reveal">
+          <h3>Embedded Partnership</h3>
+          <p class="price">Typically £3,000+ a month</p>
+          <p>For businesses that want a marketing lead inside the team: weekly planning, cross-channel delivery, and ongoing strategic input alongside you and your people.</p>
+        </div>
+        <div class="way reveal">
+          <h3>Strategic Projects</h3>
+          <p class="price">Priced individually</p>
+          <p>Rebrands, website rebuilds, funnel builds and other defined pieces of work, scoped and quoted separately.</p>
+        </div>
+      </div>
+      <div class="ways-note prose reveal">
+        <p>Every retainer includes a combination of strategic thinking and hands-on implementation. Rather than delivering a fixed list of services, we focus our time on the highest-impact marketing priorities for your business. The exact work may evolve as your business evolves, but the monthly capacity and agreed priorities remain the same.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment -->
+  <section class="investment">
+    <div class="wrap">
+      <p class="kicker reveal">Investment</p>
+      <p class="figures reveal">Most clients invest between £1,800 and £3,000 a month. Partnerships start from £1,200 a month.</p>
+      <p class="note reveal">Every engagement starts with a conversation about whether those numbers make sense for your stage. If they don’t, I’ll say so and point you somewhere more useful.</p>
+    </div>
+  </section>
+
+  <!-- Case studies -->
+  <section class="cases" id="cases">
+    <div class="wrap">
+      <p class="kicker reveal">Case studies</p>
+      <h2 class="reveal">The first one is being written now.</h2>
+      <div class="prose reveal">
+        <p>I’d rather leave this space quiet than fill it with invented results. The first full case study, with a real client and real numbers, is in progress. If you want to know what working together actually looks like in the meantime, ask me on a call and I’ll walk you through it.</p>
+      </div>
+      <!--
+        CASE STUDY TEMPLATE — populate only with real client material.
+        Four short sections per case study, written like a story someone would actually tell:
+        1. Where they started. The situation in human terms. Two or three sentences.
+        2. What we decided mattered. The two or three priorities, and what we chose NOT to do.
+        3. What changed. Numbers where possible (enquiries, pipeline, time returned to the
+           founder), plus one direct quote from the founder in their own words.
+        4. What it took. The tier and cadence, e.g. "a Growth partnership, two days a month,
+           fortnightly calls." Capacity, never a task list.
+        Leave space for a client-context photo (real, not stock) once material exists.
+      -->
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="kicker reveal">About Hannah</p>
+      <div class="about-grid">
+        <div class="about-photos reveal">
+          <div class="photo portrait"><span>Fuji photography<br>warm portrait</span></div>
+          <div class="photo square blue"><span>film camera, dog,<br>travel</span></div>
+        </div>
+        <div class="prose reveal">
+          <h2>I notice things. It’s a habit.</h2>
+          <p>I’m Hannah. My career has moved between government, corporate leadership and creative studios: years as an EA to government ministers and CEOs, and years in creative studios on projects big and small. Different worlds, but the same habit ran through both. I notice things. I’m a curious person by nature, and I tend to absorb far more of a room, a business, a decision than I’m actually asked to.</p>
+          <p>That habit is the thread running through everything I do now. Still watching closely. Still curious about what’s actually going on underneath the surface of a business.</p>
+          <p>Now I do one job: helping a small number of growing service businesses simplify their marketing and build the systems that support it. We decide what matters, together. I build it.</p>
+          <p>Off the clock: a film camera, wherever the next trip is, and Barney, my red golden retriever and the best colleague I could ever ask for.</p>
+          <p>I use AI daily as a tool and never as a substitute for judgement. I work with a handful of clients properly rather than many at arm’s length. Both of those are on purpose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead magnet -->
+  <section class="audit" id="audit">
+    <div class="wrap audit-grid">
+      <div class="reveal">
+        <p class="kicker">Free self-audit</p>
+        <h2>Where your marketing leaks.</h2>
+        <div class="prose">
+          <p>A 20-minute self-audit for founder-led service businesses. Seven areas, twenty-one questions, a score out of 42 that shows you where the structure is missing. It mirrors the way I look at a business in the first month of a partnership.</p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn" href="../lead-magnet/where-your-marketing-leaks.pdf" download>Get the audit</a>
+        </div>
+        <!--
+          EMAIL CAPTURE (wire before launch): replace the direct download above with your
+          email provider’s form (Kit / MailerLite embed), delivering the PDF as email one
+          of the three-email sequence described in the lead magnet delivery mechanics.
+        -->
+      </div>
+      <div class="audit-card reveal">
+        <p class="doc-title">WHERE YOUR<br>MARKETING LEAKS</p>
+        <p class="doc-sub">a 20-minute self-audit</p>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book a call -->
+  <section class="book" id="book">
+    <div class="wrap">
+      <p class="kicker reveal">Book a discovery call</p>
+      <h2 class="reveal">45 minutes. Mostly me asking questions.</h2>
+      <div class="prose reveal">
+        <p class="lede">A conversation about your business and how marketing looks from where you sit. If I can help, I’ll explain exactly how, with numbers. If I can’t, I’ll say so and tell you where I’d look instead.</p>
+      </div>
+
+      <div class="book-panel reveal">
+        <form id="qualifyForm" novalidate>
+          <p class="step-label">A few questions first, so the call starts useful</p>
+          <div class="field">
+            <label for="q1">Roughly where is the business today?</label>
+            <select id="q1" name="q1" required>
+              <option value="" selected disabled>Choose a revenue band</option>
+              <option>Under £250k</option>
+              <option>£250k–£1m</option>
+              <option>£1m–£2m</option>
+              <option>Over £2m</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q2">How many people work in the business?</label>
+            <input id="q2" name="q2" type="text" inputmode="numeric" autocomplete="off" required>
+          </div>
+          <div class="field">
+            <label for="q3">What prompted you to book this call now?</label>
+            <textarea id="q3" name="q3" required></textarea>
+          </div>
+          <div class="field">
+            <label for="q4">What marketing exists today, in a sentence or two?</label>
+            <textarea id="q4" name="q4" required></textarea>
+          </div>
+          <div class="book-actions">
+            <button class="btn" type="submit">Choose a time</button>
+            <a class="book-skip text-link" href="#" id="skipToCalendar">or skip straight to the calendar</a>
+          </div>
+        </form>
+
+        <div id="calendly-embed" aria-live="polite"></div>
+        <p class="calendly-fallback" id="calendlyFallback" hidden>
+          If the calendar doesn’t load,
+          <a class="text-link" href="https://calendly.com/hello-hannahverdant-call/discovery-call" target="_blank" rel="noopener noreferrer">book directly on Calendly</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram -->
+  <section class="insta" aria-label="Instagram">
+    <div class="wrap">
+      <div class="insta-head">
+        <p class="kicker" style="margin-bottom:0;">From Instagram</p>
+        <a class="text-link" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer" style="font-size:14px;">@hannahverdant.co</a>
+      </div>
+      <div class="insta-grid reveal">
+        <!-- Placeholder tiles: replace with a live feed widget (e.g. Behold or LightWidget)
+             before launch, or keep as brand tiles linking to the profile. -->
+        <a class="insta-tile t-moss" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>what I’ve noticed&hellip;</span></a>
+        <a class="insta-tile t-ivory" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>behind the business</span></a>
+        <a class="insta-tile t-blue" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>a considered life</span></a>
+        <a class="insta-tile t-moss" href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer"><span>marketing philosophy</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="logotype" href="#top" aria-label="Back to top">
+        <span class="caps">HANNAH</span>
+        <span class="ital">verdant</span>
+      </a>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/hannahverdant.co" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/in/hannah-verdant-553a20406" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:hello@hannahverdant.co">hello@hannahverdant.co</a>
+      </div>
+    </div>
+    <div class="foot-line">
+      <span>&copy; <span id="year">2026</span> Hannah Verdant</span>
+      <span>calm, considered, curious</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // Current year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Duplicate marquee content so the loop is seamless
+  var track = document.getElementById("marqueeTrack");
+  track.innerHTML += track.innerHTML;
+
+  // Scroll reveals
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveals = document.querySelectorAll(".reveal");
+  if (!reduced && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // Quote carousel
+  var carousel = document.getElementById("quoteCarousel");
+  function slide(dir) {
+    var card = carousel.querySelector(".quote-card");
+    carousel.scrollBy({ left: dir * (card.offsetWidth + 20), behavior: reduced ? "auto" : "smooth" });
+  }
+  document.getElementById("quotePrev").addEventListener("click", function () { slide(-1); });
+  document.getElementById("quoteNext").addEventListener("click", function () { slide(1); });
+
+  // Booking: qualifying questions -> inline Calendly with answers prefilled.
+  // Replace CALENDLY_URL with the real event link before launch. If the Calendly
+  // account supports Routing Forms, you can point this at the routing form URL
+  // instead and remove the question form above.
+  var CALENDLY_URL = "https://calendly.com/hello-hannahverdant-call/discovery-call";
+  var form = document.getElementById("qualifyForm");
+  var embed = document.getElementById("calendly-embed");
+  var fallback = document.getElementById("calendlyFallback");
+  var loaded = false;
+
+  function openCalendly(answers) {
+    if (loaded) { embed.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); return; }
+    loaded = true;
+    embed.classList.add("open");
+    fallback.hidden = false;
+    var s = document.createElement("script");
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.async = true;
+    s.onload = function () {
+      if (!window.Calendly) return;
+      var url = CALENDLY_URL + "?hide_gdpr_banner=1";
+      if (answers) {
+        url += Object.keys(answers).map(function (k) {
+          return "&" + k + "=" + encodeURIComponent(answers[k]);
+        }).join("");
+      }
+      window.Calendly.initInlineWidget({
+        url: url,
+        parentElement: embed,
+        prefill: { customAnswers: answers || {} }
+      });
+      embed.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    };
+    s.onerror = function () { fallback.hidden = false; };
+    document.body.appendChild(s);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    openCalendly({
+      a1: form.q1.value,
+      a2: form.q2.value.slice(0, 200),
+      a3: form.q3.value.slice(0, 800),
+      a4: form.q4.value.slice(0, 800)
+    });
+  });
+
+  document.getElementById("skipToCalendar").addEventListener("click", function (e) {
+    e.preventDefault();
+    openCalendly(null);
+  });
+})();
+</script>
+
+</body>
+</html>
