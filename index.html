@@ -128,6 +128,7 @@
   .photo.wide { aspect-ratio: 16 / 7; }
   .photo.square { aspect-ratio: 1; }
   img.photo { object-fit: cover; width: 100%; display: block; }
+  .about-photos img.photo.square { object-position: 32% 42%; }
 
   /* ---------- marquee ---------- */
   .marquee {
@@ -322,11 +323,13 @@
   }
   .insta-tile.t-blue span, .insta-tile.t-ivory span { color: var(--ink); }
   .insta-tile { position: relative; overflow: hidden; }
+  /* Photo tiles show the whole post (contain), matted on ivory so nothing is cropped. */
+  .insta-tile.has-photo { background: var(--ivory-deep); border: 1px solid var(--hairline); }
   .insta-tile img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; transition: transform 0.4s ease;
+    position: absolute; inset: 8px;
+    object-fit: contain; transition: transform 0.4s ease;
   }
-  .insta-tile.has-photo:hover img { transform: scale(1.03); }
+  .insta-tile.has-photo:hover img { transform: scale(1.02); }
   .insta-tile.has-photo span { display: none; }
   .insta-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
 
