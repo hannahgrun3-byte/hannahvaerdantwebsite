@@ -6,5 +6,7 @@ lead-magnet/score-cheat-sheet.html
 lead-magnet/score-cheat-sheet.pdf
 GO-LIVE-NOTES.md
 
-# Full-size camera originals (web-sized copies are committed)
-images/*.JPG
+# Full-size camera originals (web-sized copies are committed).
+# Listed by exact name: a *.JPG glob also catches *.jpg on macOS (case-insensitive).
+/images/DSCF1302 2.JPG
+/images/_DSF0196.JPG
