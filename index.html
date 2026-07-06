@@ -271,6 +271,17 @@
     font-size: 15px; color: var(--moss);
   }
   .audit-card .dot { width: 8px; height: 8px; background: var(--wine); border-radius: 50%; margin: 22px auto 0; }
+  .audit-form { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .audit-form input[type="email"] {
+    flex: 1 1 220px; font-family: 'Work Sans', sans-serif; font-size: 15px;
+    color: var(--ink); background: var(--ivory);
+    border: 1px solid rgba(36,28,26,0.25); border-radius: 3px; padding: 13px 14px;
+  }
+  .audit-note { margin-top: 14px; font-size: 12.5px; opacity: 0.65; }
+  .audit-success {
+    margin-top: 18px; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 17px; color: var(--moss);
+  }
 
   /* ---------- booking ---------- */
   .book .lede { font-size: 18px; max-width: 620px; }
@@ -537,14 +548,17 @@
         <div class="prose">
           <p>A 20-minute self-audit for founder-led service businesses. Seven areas, twenty-one questions, a score out of 42 that shows you where the structure is missing. It mirrors the way I look at a business in the first month of a partnership.</p>
         </div>
-        <div class="hero-cta">
-          <a class="btn" href="/lead-magnet/where-your-marketing-leaks.pdf" download>Get the audit</a>
-        </div>
-        <!--
-          EMAIL CAPTURE (wire before launch): replace the direct download above with your
-          email provider’s form (Kit / MailerLite embed), delivering the PDF as email one
-          of the three-email sequence described in the lead magnet delivery mechanics.
-        -->
+        <form id="auditForm" class="audit-form"
+              action="https://assets.mailerlite.com/jsonp/2492512/forms/192243453612001105/subscribe"
+              method="post" target="_blank">
+          <input type="email" name="fields[email]" required placeholder="Your email"
+                 aria-label="Email address" autocomplete="email">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <button class="btn" type="submit">Send me the audit</button>
+        </form>
+        <p class="audit-note">The audit arrives by email, followed by two short notes. Unsubscribe any time.</p>
+        <p class="audit-success" id="auditSuccess" hidden>It&rsquo;s on its way. If it hasn&rsquo;t arrived in a few minutes, check spam, then rescue it.</p>
       </div>
       <div class="audit-card reveal">
         <p class="doc-title">WHERE YOUR<br>MARKETING LEAKS</p>
@@ -730,6 +744,22 @@
   document.getElementById("skipToCalendar").addEventListener("click", function (e) {
     e.preventDefault();
     openCalendly(null);
+  });
+
+  // Audit email capture: posts to MailerLite from our own form so the design
+  // stays on brand. If the request can't be sent, fall back to the normal
+  // form submission, which lands on MailerLite's hosted confirmation page.
+  var auditForm = document.getElementById("auditForm");
+  auditForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!auditForm.reportValidity()) return;
+    fetch(auditForm.action, { method: "POST", body: new FormData(auditForm), mode: "no-cors" })
+      .then(function () {
+        auditForm.hidden = true;
+        document.querySelector(".audit-note").hidden = true;
+        document.getElementById("auditSuccess").hidden = false;
+      })
+      .catch(function () { auditForm.submit(); });
   });
 
   // Live Instagram feed. Connect the Instagram account at behold.so (free),
