@@ -249,12 +249,13 @@
 
   /* ---------- case studies ---------- */
   .cases .prose { max-width: 640px; }
-  .case { margin-top: 40px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
-  @media (max-width: 860px) { .case { grid-template-columns: 1fr; gap: 32px; } }
-  .case-photo { border-radius: 3px; width: 100%; display: block; object-fit: cover; aspect-ratio: 4/5; }
-  .case-label { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--moss); margin-bottom: 8px; }
+  .case { margin-top: 40px; max-width: 720px; }
+  .case-head { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
+  .case-portrait { width: 100px; height: 100px; border-radius: 4px; object-fit: cover; object-position: 50% 16%; flex: none; }
+  .case-name { font-family: 'Fraunces', serif; font-size: 19px; color: var(--ink); }
+  .case-sub { font-family: 'Fraunces', serif; font-style: italic; font-size: 14.5px; color: var(--moss); margin-top: 3px; }
   .case h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.22; margin-bottom: 18px; }
-  .case-intro { font-size: 16px; line-height: 1.7; max-width: 620px; }
+  .case-intro { font-size: 16px; line-height: 1.7; }
   .case-intro p + p { margin-top: 14px; }
   .timeline { margin-top: 30px; border-top: 1px solid var(--hairline); }
   .month { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--hairline); }
@@ -264,10 +265,6 @@
   .case-quote { margin-top: 32px; padding-left: 22px; border-left: 2px solid var(--blue); }
   .case-quote blockquote { font-family: 'Fraunces', serif; font-size: 20px; line-height: 1.5; }
   .case-quote cite { display: block; margin-top: 14px; font-family: 'Work Sans', sans-serif; font-style: normal; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
-  .case-gallery-label { font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); margin: 44px 0 14px; }
-  .case-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  @media (max-width: 620px) { .case-gallery { grid-template-columns: 1fr; } }
-  .case-gallery img { width: 100%; display: block; border-radius: 3px; }
 
   /* ---------- about ---------- */
   .about { border-top: 1px solid var(--hairline); }
@@ -462,7 +459,7 @@
       <div class="carousel reveal" id="quoteCarousel" tabindex="0" aria-label="Client feedback, scroll horizontally">
         <figure class="quote-card">
           <blockquote>I&rsquo;ve been able to hand things over and know they&rsquo;ll get picked up, tracked and delivered. That kind of autonomy is rare.</blockquote>
-          <cite>Gret Batchelar, founder of Being</cite>
+          <cite>Gret Batchelar, founder of Conscious Working</cite>
         </figure>
         <figure class="quote-card">
           <blockquote>Hannah takes time to learn about and get a feel for your brand. She instantly understood, intuitively, what messages I wanted to convey. Incredibly approachable and warm, and I would recommend her highly.</blockquote>
@@ -537,34 +534,30 @@
       <h2 class="reveal">Being: the first four months.</h2>
 
       <div class="case reveal">
-        <img class="case-photo" src="images/gret-portrait.jpg" alt="Gret Batchelar, founder of Being, in a forest holding a cork yoga mat" loading="lazy">
-        <div>
-          <p class="case-label">Gret Batchelar, founder of Being</p>
-          <h3>Conscious leadership work that had outgrown its own marketing.</h3>
-          <div class="case-intro">
-            <p>Gret teaches conscious leadership and nervous system work. The work itself was strong. The marketing around it hadn&rsquo;t kept pace: files scattered across a drive, a launch coming, and a brand that no longer matched where the business had grown to.</p>
-            <p>We didn&rsquo;t try to fix everything at once. We picked an order and worked through it.</p>
-          </div>
-
-          <div class="timeline">
-            <div class="month"><div class="m">Month one</div><div class="w">Launch support for Being, and a proper clear-out: a filing system built in the drive so nothing lived only in someone&rsquo;s head.</div></div>
-            <div class="month"><div class="m">Month two</div><div class="w">A brand refresh and repositioning, then social content that finally sounded like her rather than the algorithm.</div></div>
-            <div class="month"><div class="m">Month three</div><div class="w">Email marketing and funnels: turning quiet interest into a path someone could actually follow.</div></div>
-            <div class="month"><div class="m">Month four</div><div class="w">Website updates and a LinkedIn strategy, with a lead tracker so we could finally see where enquiries were coming from.</div></div>
-          </div>
-
-          <div class="case-quote">
-            <blockquote>We now have a much more aligned brand and narrative. The positioning is clearer, and we have a defined social strategy to speak to our target audience. Our systems and priorities are much clearer too, in just the past few months.</blockquote>
-            <cite>Gret Batchelar, founder of Being</cite>
+        <div class="case-head">
+          <img class="case-portrait" src="images/gret-portrait.jpg" alt="Gret Batchelar, founder of Conscious Working" loading="lazy">
+          <div>
+            <p class="case-name">Gret Batchelar</p>
+            <p class="case-sub">Founder of Conscious Working</p>
           </div>
         </div>
-      </div>
+        <h3>Conscious leadership work that had outgrown its own marketing.</h3>
+        <div class="case-intro">
+          <p>Gret spent years as a VP before becoming a conscious leadership practitioner. Her business, Conscious Working, brings ancient wisdom into the practical reality of leading a team today, through retreats and programmes for leaders and the people around them.</p>
+          <p>The work itself was strong. The marketing around it hadn&rsquo;t kept pace: files scattered across a drive, a launch coming, and a brand that no longer matched where the business had grown to. We didn&rsquo;t try to fix everything at once. We picked an order and worked through it.</p>
+        </div>
 
-      <p class="case-gallery-label reveal">A look at the rebrand</p>
-      <div class="case-gallery reveal">
-        <img src="images/gret-being-1.jpg" alt="Being brand asset: a 7 day nervous system challenge" loading="lazy">
-        <img src="images/gret-being-2.jpg" alt="Being brand asset: Illuminate, lead from one integrated self" loading="lazy">
-        <img src="images/gret-being-3.jpg" alt="Being brand asset: 8 habits of a conscious leader" loading="lazy">
+        <div class="timeline">
+          <div class="month"><div class="m">Month one</div><div class="w">Launch support, and a proper clear-out: a filing system built in the drive so nothing lived only in someone&rsquo;s head.</div></div>
+          <div class="month"><div class="m">Month two</div><div class="w">A brand refresh and repositioning, then social content that felt like her and aligned with what Conscious Working is really about.</div></div>
+          <div class="month"><div class="m">Month three</div><div class="w">Email marketing and funnels: turning quiet interest into a path someone could actually follow.</div></div>
+          <div class="month"><div class="m">Month four</div><div class="w">Website updates and a LinkedIn strategy, with a lead tracker so we could finally see where enquiries were coming from.</div></div>
+        </div>
+
+        <div class="case-quote">
+          <blockquote>We now have a much more aligned brand and narrative. The positioning is clearer, and we have a defined social strategy to speak to our target audience. Our systems and priorities are much clearer too, in just the past few months.</blockquote>
+          <cite>Gret Batchelar, founder of Conscious Working</cite>
+        </div>
       </div>
     </div>
   </section>
