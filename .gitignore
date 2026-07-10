@@ -10,3 +10,9 @@ GO-LIVE-NOTES.md
 # Listed by exact name: a *.JPG glob also catches *.jpg on macOS (case-insensitive).
 /images/DSCF1302 2.JPG
 /images/_DSF0196.JPG
+
+# Client source material — private, not for the public repo.
+# The web-sized versions used on the site live in /images and are committed.
+/gretimage.jpg
+/gretfeedback-forcasestudy.png
+/examples of rebranding work for gret/
