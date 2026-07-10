@@ -249,6 +249,25 @@
 
   /* ---------- case studies ---------- */
   .cases .prose { max-width: 640px; }
+  .case { margin-top: 40px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+  @media (max-width: 860px) { .case { grid-template-columns: 1fr; gap: 32px; } }
+  .case-photo { border-radius: 3px; width: 100%; display: block; object-fit: cover; aspect-ratio: 4/5; }
+  .case-label { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--moss); margin-bottom: 8px; }
+  .case h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.22; margin-bottom: 18px; }
+  .case-intro { font-size: 16px; line-height: 1.7; max-width: 620px; }
+  .case-intro p + p { margin-top: 14px; }
+  .timeline { margin-top: 30px; border-top: 1px solid var(--hairline); }
+  .month { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--hairline); }
+  @media (max-width: 520px) { .month { grid-template-columns: 1fr; gap: 4px; } }
+  .month .m { font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--moss); }
+  .month .w { font-size: 15px; line-height: 1.55; }
+  .case-quote { margin-top: 32px; padding-left: 22px; border-left: 2px solid var(--blue); }
+  .case-quote blockquote { font-family: 'Fraunces', serif; font-size: 20px; line-height: 1.5; }
+  .case-quote cite { display: block; margin-top: 14px; font-family: 'Work Sans', sans-serif; font-style: normal; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+  .case-gallery-label { font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); margin: 44px 0 14px; }
+  .case-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 620px) { .case-gallery { grid-template-columns: 1fr; } }
+  .case-gallery img { width: 100%; display: block; border-radius: 3px; }
 
   /* ---------- about ---------- */
   .about { border-top: 1px solid var(--hairline); }
@@ -442,6 +461,10 @@
       <p class="kicker reveal">Client words</p>
       <div class="carousel reveal" id="quoteCarousel" tabindex="0" aria-label="Client feedback, scroll horizontally">
         <figure class="quote-card">
+          <blockquote>I&rsquo;ve been able to hand things over and know they&rsquo;ll get picked up, tracked and delivered. That kind of autonomy is rare.</blockquote>
+          <cite>Gret Batchelar, founder of Being</cite>
+        </figure>
+        <figure class="quote-card">
           <blockquote>Hannah takes time to learn about and get a feel for your brand. She instantly understood, intuitively, what messages I wanted to convey. Incredibly approachable and warm, and I would recommend her highly.</blockquote>
           <cite>Maria, founder of Herstorical Tours, London</cite>
         </figure>
@@ -510,22 +533,39 @@
   <!-- Case studies -->
   <section class="cases" id="cases">
     <div class="wrap">
-      <p class="kicker reveal">Case studies</p>
-      <h2 class="reveal">The first one is being written now.</h2>
-      <div class="prose reveal">
-        <p>I’d rather leave this space quiet than fill it with invented results. The first full case study, with a real client and real numbers, is in progress. If you want to know what working together actually looks like in the meantime, ask me on a call and I’ll walk you through it.</p>
+      <p class="kicker reveal">Case study</p>
+      <h2 class="reveal">Being: the first four months.</h2>
+
+      <div class="case reveal">
+        <img class="case-photo" src="images/gret-portrait.jpg" alt="Gret Batchelar, founder of Being, in a forest holding a cork yoga mat" loading="lazy">
+        <div>
+          <p class="case-label">Gret Batchelar, founder of Being</p>
+          <h3>Conscious leadership work that had outgrown its own marketing.</h3>
+          <div class="case-intro">
+            <p>Gret teaches conscious leadership and nervous system work. The work itself was strong. The marketing around it hadn&rsquo;t kept pace: files scattered across a drive, a launch coming, and a brand that no longer matched where the business had grown to.</p>
+            <p>We didn&rsquo;t try to fix everything at once. We picked an order and worked through it.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="month"><div class="m">Month one</div><div class="w">Launch support for Being, and a proper clear-out: a filing system built in the drive so nothing lived only in someone&rsquo;s head.</div></div>
+            <div class="month"><div class="m">Month two</div><div class="w">A brand refresh and repositioning, then social content that finally sounded like her rather than the algorithm.</div></div>
+            <div class="month"><div class="m">Month three</div><div class="w">Email marketing and funnels: turning quiet interest into a path someone could actually follow.</div></div>
+            <div class="month"><div class="m">Month four</div><div class="w">Website updates and a LinkedIn strategy, with a lead tracker so we could finally see where enquiries were coming from.</div></div>
+          </div>
+
+          <div class="case-quote">
+            <blockquote>We now have a much more aligned brand and narrative. The positioning is clearer, and we have a defined social strategy to speak to our target audience. Our systems and priorities are much clearer too, in just the past few months.</blockquote>
+            <cite>Gret Batchelar, founder of Being</cite>
+          </div>
+        </div>
       </div>
-      <!--
-        CASE STUDY TEMPLATE — populate only with real client material.
-        Four short sections per case study, written like a story someone would actually tell:
-        1. Where they started. The situation in human terms. Two or three sentences.
-        2. What we decided mattered. The two or three priorities, and what we chose NOT to do.
-        3. What changed. Numbers where possible (enquiries, pipeline, time returned to the
-           founder), plus one direct quote from the founder in their own words.
-        4. What it took. The tier and cadence, e.g. "a Growth partnership, two days a month,
-           fortnightly calls." Capacity, never a task list.
-        Leave space for a client-context photo (real, not stock) once material exists.
-      -->
+
+      <p class="case-gallery-label reveal">A look at the rebrand</p>
+      <div class="case-gallery reveal">
+        <img src="images/gret-being-1.jpg" alt="Being brand asset: a 7 day nervous system challenge" loading="lazy">
+        <img src="images/gret-being-2.jpg" alt="Being brand asset: Illuminate, lead from one integrated self" loading="lazy">
+        <img src="images/gret-being-3.jpg" alt="Being brand asset: 8 habits of a conscious leader" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -539,13 +579,13 @@
           <img class="photo square" src="images/hannah-barney.jpg" alt="Barney, a red golden retriever, sitting in dappled woodland light" loading="lazy">
         </div>
         <div class="prose reveal">
-          <h2>I notice things. It’s a habit.</h2>
-          <p>I’m Hannah. My career has moved between government, corporate leadership and creative studios: years as an EA to government ministers and CEOs, and years in creative studios on projects big and small. Different worlds, but the same habit ran through both. I notice things. I’m a curious person by nature, and I tend to absorb far more of a room, a business, a decision than I’m actually asked to.</p>
-          <p>That habit is the thread running through everything I do now. Still watching closely. Still curious about what’s actually going on underneath the surface of a business.</p>
+          <h2>Curiosity is my strength.</h2>
+          <p>I&rsquo;m Hannah. I have a first class degree in anthropology, which is really just a formal way of saying I&rsquo;ve always been curious about people and how the world actually works. That curiosity never switched off. My career has moved between government, corporate leadership and creative studios: years as an EA to government ministers and CEOs, then years in creative studios on projects big and small. Different worlds, same instinct. I take in far more of a room, a business, a decision than I&rsquo;m ever asked to.</p>
+          <p>It&rsquo;s the thread running through everything I do now. Still watching closely. Still curious about what&rsquo;s actually going on underneath the surface of a business.</p>
           <p>Now I do one job: helping a small number of growing service businesses simplify their marketing and build the systems that support it. We decide what matters, together. I build it.</p>
           <p>I&rsquo;m based just outside London and work with clients wherever they are.</p>
-          <p>Off the clock: a film camera, wherever the next trip is, and Barney, my red golden retriever and the best colleague I could ever ask for.</p>
-          <p>I use AI daily as a tool and never as a substitute for judgement. I work with a handful of clients properly rather than many at arm’s length. Both of those are on purpose.</p>
+          <p>Off the clock: my camera, wherever the next trip is, and Barney, my red golden retriever and the best colleague I could ever ask for.</p>
+          <p>I stay close to what&rsquo;s changing in AI, so I can tell you honestly whether a tool will genuinely help your marketing and move the business forward, or just add noise. Mostly I use it to speed the work up. Never to replace the part only I can do. And I work with a handful of clients properly rather than many at arm&rsquo;s length. Both of those are on purpose.</p>
         </div>
       </div>
     </div>
