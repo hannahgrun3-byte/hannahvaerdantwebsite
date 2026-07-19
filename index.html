@@ -236,6 +236,24 @@
   .way p { margin-top: 16px; font-size: 15px; flex: 1; }
   .ways-note { margin-top: 40px; max-width: 640px; }
 
+  /* ---------- smaller ways ---------- */
+  .smaller-ways { padding: 64px 0; border-top: 1px solid var(--hairline); }
+  .smaller-ways h2 { font-size: clamp(21px, 2.6vw, 27px); margin-bottom: 14px; }
+  .smaller-ways .prose { margin-bottom: 34px; }
+  .smaller-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 780px; }
+  @media (max-width: 700px) { .smaller-grid { grid-template-columns: 1fr; } }
+  .smaller-card { background: var(--ivory-deep); border-radius: 3px; padding: 26px 28px; }
+  .smaller-card h3 { font-size: 18px; }
+  .smaller-card .price {
+    margin-top: 8px; font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase; color: var(--moss);
+  }
+  .smaller-card p { margin-top: 12px; font-size: 14.5px; line-height: 1.65; }
+  .smaller-close {
+    margin-top: 32px; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 16px; color: var(--moss); max-width: 640px;
+  }
+
   /* ---------- investment ---------- */
   .investment { background: var(--moss); color: var(--ivory); }
   .investment .kicker { color: var(--ivory); opacity: 0.8; }
@@ -515,6 +533,29 @@
       <div class="ways-note prose reveal">
         <p>Every retainer includes a combination of strategic thinking and hands-on implementation. Rather than delivering a fixed list of services, we focus our time on the highest-impact marketing priorities for your business. The exact work may evolve as your business evolves, but the monthly capacity and agreed priorities remain the same.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Smaller ways in -->
+  <section class="smaller-ways">
+    <div class="wrap">
+      <h2 class="reveal">Not ready for a partnership yet? Two smaller ways in.</h2>
+      <div class="prose reveal">
+        <p>Some businesses aren&rsquo;t ready for £1,200 a month, and that&rsquo;s fine, it just means we start somewhere smaller and more defined.</p>
+      </div>
+      <div class="smaller-grid">
+        <div class="smaller-card reveal">
+          <h3>Content, sorted</h3>
+          <p class="price">£650 a month</p>
+          <p>Up to 8 posts, reels or carousels a month, written and scheduled, so the feed stops being the thing you mean to get to. One call to start, so I understand what you need, then a 20-minute call each month to keep direction tight. No open-ended strategy, just the work, done well and on time.</p>
+        </div>
+        <div class="smaller-card reveal">
+          <h3>One system, built properly</h3>
+          <p class="price">From £850</p>
+          <p>A single piece of your marketing, a lead tracker, an email sequence, a content calendar that actually runs itself, built and handed over in two to three weeks. Yours to keep, no ongoing commitment.</p>
+        </div>
+      </div>
+      <p class="smaller-close reveal">If either one uncovers a bigger gap, we talk about what a full partnership would look like. No pressure either way.</p>
     </div>
   </section>
 
