@@ -1,0 +1,29 @@
+<!--
+  Archived section: "Investment" (moss-background pricing callout).
+  Retired from the live homepage when the site was restructured: the
+  partnership pricing line now lives in "What a partnership actually
+  means," and two versions of the same numbers on one page read worse
+  than either alone. Kept here in full, styling and copy, in case it's
+  wanted again later. This file is excluded from deployment via
+  .vercelignore.
+-->
+<style>
+  .investment { background: var(--moss); color: var(--ivory); }
+  .investment .kicker { color: var(--ivory); opacity: 0.8; }
+  .investment .kicker::before { background: var(--blue); }
+  .investment h2 { color: var(--ivory); }
+  .investment .figures {
+    font-family: 'Fraunces', serif; font-size: clamp(26px, 3.4vw, 36px);
+    line-height: 1.35; max-width: 720px;
+  }
+  .investment p.note { margin-top: 26px; max-width: 560px; opacity: 0.92; }
+</style>
+
+<!-- Investment -->
+<section class="investment">
+  <div class="wrap">
+    <p class="kicker reveal">Investment</p>
+    <p class="figures reveal">Most Marketing Partnerships invest between £1,800 and £3,000 a month, with partnerships starting from £1,200. If you&rsquo;re not ready for that yet, there are smaller ways in from £650.</p>
+    <p class="note reveal">Every engagement starts with a conversation about where that leaves your business. If a partnership isn&rsquo;t the right stage for you, I&rsquo;ll say so, and show you where the smaller options fit instead.</p>
+  </div>
+</section>

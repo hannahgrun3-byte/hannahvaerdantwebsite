@@ -1,0 +1,51 @@
+<!--
+  Archived section: "Ways to work together" (three-tile retainer grid).
+  Retired from the live homepage when the site was restructured around
+  "What a partnership actually means" and "What that usually covers."
+  Kept here in full, styling and copy, in case it's wanted again later.
+  This file is excluded from deployment via .vercelignore.
+-->
+<style>
+  .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 12px; }
+  @media (max-width: 860px) { .ways-grid { grid-template-columns: 1fr; } }
+  .way {
+    border: 1px solid var(--hairline); border-radius: 3px;
+    padding: 36px 30px; background: rgba(255,255,255,0.25);
+    display: flex; flex-direction: column;
+  }
+  .way h3 { font-size: 23px; }
+  .way .price {
+    margin-top: 10px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--wine);
+  }
+  .way p { margin-top: 16px; font-size: 15px; flex: 1; }
+  .ways-note { margin-top: 40px; max-width: 640px; }
+</style>
+
+<!-- Ways to work together -->
+<section id="ways">
+  <div class="wrap">
+    <p class="kicker reveal">Ways to work together</p>
+    <h2 class="reveal">Three ways in. All of them hands-on.</h2>
+    <div class="ways-grid">
+      <div class="way reveal">
+        <h3>Marketing Partnership</h3>
+        <p class="price">From £1,200 a month</p>
+        <p>A defined amount of strategic and implementation capacity each month, focused on the highest-impact priorities we agree together, with a planning call to set them.</p>
+      </div>
+      <div class="way reveal">
+        <h3>Embedded Partnership</h3>
+        <p class="price">Typically £3,000+ a month</p>
+        <p>For businesses that want a marketing lead inside the team: weekly planning, cross-channel delivery, and ongoing strategic input alongside you and your people.</p>
+      </div>
+      <div class="way reveal">
+        <h3>The Marketing Engine</h3>
+        <p class="price">Priced by what&rsquo;s included, delivered in six to eight weeks</p>
+        <p>A defined build for businesses that don&rsquo;t want a retainer. Your engine might include a funnel, email marketing, lead tracking, AI tools, social media templates, a brand refresh, a website build, and the systems that connect them. Set up properly and handed over. Then it&rsquo;s yours, no ongoing commitment.</p>
+      </div>
+    </div>
+    <div class="ways-note prose reveal">
+      <p>Every retainer includes a combination of strategic thinking and hands-on implementation. Rather than delivering a fixed list of services, we focus our time on the highest-impact marketing priorities for your business. The exact work may evolve as your business evolves, but the monthly capacity and agreed priorities remain the same.</p>
+    </div>
+  </div>
+</section>
